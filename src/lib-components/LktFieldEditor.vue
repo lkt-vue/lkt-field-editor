@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 // Emits
-import {generateRandomString} from "lkt-string-tools";
+import {generateRandomString, stripTags} from "lkt-string-tools";
 import {computed, nextTick, onMounted, ref, useSlots, watch} from "vue";
 import {createLktEvent} from "lkt-events";
 import {Settings} from "../settings/Settings";
@@ -215,7 +215,11 @@ onMounted(() => {
     editor.value.onChange = (content) => {
         if (timeout.value) clearTimeout(timeout.value);
 
-        timeout.value = setTimeout(() => value.value = content, 100);
+        timeout.value = setTimeout(() => {
+            let strippedContent = stripTags(content);
+            if (strippedContent === '') value.value = '';
+            else value.value = content
+        }, 100);
 
         if (props.disabled) editor.value.disabled();
         else editor.value.enabled();
