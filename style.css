@@ -1,0 +1,259 @@
+.lkt-field-editor {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: var(--text-color);
+    width: 100%;
+}
+
+.lkt-field-editor .lkt-field-editor__main {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    background-color: var(--field-background-color);
+    border: var(--field-border-width) var(--field-border-style) var(--field-border-color);
+    box-shadow: var(--field-shadow);
+    border-radius: var(--field-border-radius);
+}
+
+.lkt-field-editor.has-focus .lkt-field-editor__main {
+    outline: 0;
+    border: var(--field-border-width) var(--field-border-style) var(--focus-color);
+    box-shadow: 0 0 0 2px var(--focus-color);
+}
+
+.lkt-field-editor textarea {
+    height: calc(var(--input-height) * 2 + var(--gap) + var(--field-label-line-height));
+    min-height: calc(var(--input-height) * 2 + var(--gap) + var(--field-label-line-height));
+    max-height: calc(var(--input-height) * 4 + var(--gap) * 3 + var(--field-label-line-height) * 3);
+    resize: vertical;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    outline: 0;
+    border: var(--field-border-width) var(--field-border-style) var(--field-border-color);
+    box-shadow: var(--field-shadow);
+    padding: var(--field-editor-padding);
+    transition: var(--field-transition);
+    font-size: var(--field-font-size);
+    border-radius: var(--field-border-radius);
+    background-color: var(--field-background-color);
+}
+
+.lkt-field-editor input:-webkit-autofill,
+.lkt-field-editor input:-webkit-autofill:hover,
+.lkt-field-editor input:-webkit-autofill:focus,
+.lkt-field-editor input:-webkit-autofill:active  {
+    box-shadow: none;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.lkt-field-editor textarea:-internal-autofill-selected {
+    background-color: var(--field-background-color) !important;
+}
+
+.lkt-field-editor textarea:-webkit-autofill {
+    -webkit-text-fill-color: var(--text-color);
+}
+
+.lkt-field-editor label {
+    display: block;
+    font-weight: var(--field-label-font-weight);
+    font-size: var(--field-label-font-size);
+    line-height: var(--field-label-line-height);
+    margin: var(--field-label-margin);
+}
+
+.lkt-field--alert.lkt-field-editor .lkt-field-editor__main {
+    background: var(--alert-contrast);
+    border-color: var(--alert-color);
+}
+
+.lkt-field--alert.lkt-field-editor:hover .lkt-field-editor__main {
+    background: var(--alert-contrast);
+    border-color: var(--alert-color);
+}
+
+.lkt-field--danger.lkt-field-editor .lkt-field-editor__main {
+    background: var(--danger-contrast);
+    border-color: var(--danger-color);
+}
+
+.lkt-field--danger.lkt-field-editor:hover .lkt-field-editor__main {
+    background: var(--danger-contrast);
+    border-color: var(--danger-color);
+}
+
+.lkt-field--info.lkt-field-editor .lkt-field-editor__main {
+    background: var(--info-contrast);
+    border-color: var(--info-color);
+}
+
+.lkt-field--info.lkt-field-editor:hover .lkt-field-editor__main {
+    background: var(--info-contrast);
+    border-color: var(--info-color);
+}
+
+.lkt-field--warning.lkt-field-editor .lkt-field-editor__main {
+    background: var(--warning-contrast);
+    border-color: var(--warning-color);
+}
+
+.lkt-field--warning.lkt-field-editor:hover .lkt-field-editor__main {
+    background: var(--warning-contrast);
+    border-color: var(--warning-color);
+}
+
+.lkt-field--target.lkt-field-editor .lkt-field-editor__main {
+    background: var(--target-contrast);
+    border-color: var(--target-color);
+}
+
+.lkt-field--target.lkt-field-editor:hover .lkt-field-editor__main {
+    background: var(--target-contrast);
+    border-color: var(--target-color);
+}
+
+.lkt-field-editor textarea[disabled],
+.lkt-field-editor textarea[readonly] {
+    box-shadow: none;
+    border: var(--field-border-width) var(--field-border-style) var(--disabled-color);
+    background-color: var(--disabled-color) !important;
+}
+
+
+/* Read mode */
+.lkt-field-editor .lkt-field-editor__read {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+}
+
+.lkt-field-editor .lkt-field-editor__read-value {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    outline: 0;
+    border: none;
+    font-size: var(--field-font-size);
+    padding-right: var(--field-state-right);
+    line-height: var(--input-height);
+    max-height: calc(var(--input-height) * 4 + var(--gap) * 3);
+    overflow-y: auto;
+    /*resize: vertical;*/
+    white-space: break-spaces;
+}
+
+
+/* State */
+.lkt-field__state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--input-height);
+    gap: var(--field-state-gap);
+    position: relative;
+    padding-right: var(--field-state-right);
+    margin-left: auto;
+}
+
+.lkt-field__add-icon:before {
+    content: '\002B';
+}
+
+.lkt-field__info-icon:before {
+    content: '\2139';
+}
+
+.lkt-field__show-password-icon:before {
+    content: '\1F441';
+}
+
+.lkt-field__hide-password-icon:before {
+    content: '\1F441';
+}
+
+.lkt-field__hide-password-icon:after {
+    content: '';
+    display: block;
+    width: 2px;
+    height: var(--field-state-icon-size);
+    background: var(--text-color);
+    transform-origin: center center;
+    transform: translate(-50%, -50%) rotate(45deg);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.lkt-field__edit-icon:before {
+    content: '\270F';
+    transform: rotate(135deg);
+}
+
+.lkt-field__mandatory-icon:before {
+    content: '\002A';
+}
+
+.lkt-field__warn-icon:before {
+    content: '\26A0';
+}
+
+.lkt-field__error-icon:before {
+    content: '\274C';
+}
+
+.lkt-field__log-icon:before {
+    content: '\003F';
+}
+
+.lkt-field__reset-icon:before {
+    content: '\00d7';
+}
+
+.lkt-field__open-icon:before {
+    content: '\21F1';
+    transform: rotate(90deg);
+    display: block;
+}
+
+.lkt-field__link-icon:before {
+    content: '\21B5';
+    transform: rotate(180deg);
+    display: block;
+    margin-top: -5px;
+}
+
+.lkt-field__add-icon,
+.lkt-field__open-icon,
+.lkt-field__show-password-icon,
+.lkt-field__link-icon,
+.lkt-field__mandatory-icon,
+.lkt-field__info-icon,
+.lkt-field__warn-icon,
+.lkt-field__error-icon,
+.lkt-field__reset-icon,
+.lkt-field__edit-icon,
+.lkt-field__undo-icon,
+.lkt-field__log-icon {
+    font-family: arial, serif;
+    font-style: normal;
+    font-size: var(--field-state-icon-size);
+    cursor: help;
+    width: var(--field-state-icon-size);
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lkt-field__add-icon,
+.lkt-field__open-icon {
+    cursor: pointer;
+}
+
+.lkt-field__link-icon {
+    cursor: alias;
+}
