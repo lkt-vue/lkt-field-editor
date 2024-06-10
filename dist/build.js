@@ -7828,7 +7828,33 @@ const it = /* @__PURE__ */ T(ai), ri = { ckb: be, cs: ve, da: xe, de: we, en: ee
     valueSlot: { default: "" },
     editSlot: { default: "" },
     slotData: { default: () => ({}) },
-    editorOptions: { default: () => ({}) },
+    editorOptions: { default: () => ({
+      buttonList: [
+        ["undo", "redo"],
+        ["font", "fontSize", "formatBlock"],
+        ["paragraphStyle", "blockquote"],
+        ["bold", "underline", "italic", "strike", "subscript", "superscript"],
+        ["fontColor", "hiliteColor", "textStyle"],
+        ["removeFormat"],
+        "/",
+        // Line break
+        ["outdent", "indent"],
+        ["align", "horizontalRule", "list", "lineHeight"],
+        [
+          "table",
+          "link"
+          /**'image', 'video', 'audio',*/
+        ],
+        /** ['imageGallery'] */
+        // You must add the "imageGalleryUrl".
+        ["fullScreen", "showBlocks", "codeView"],
+        ["preview", "print"],
+        [
+          /**'save',*/
+          "template"
+        ]
+      ]
+    }) },
     lang: { default: "en" }
   },
   emits: ["update:modelValue", "keyup", "keydown", "focus", "blur", "click", "click-info", "click-error"],
