@@ -1,4 +1,4 @@
-# LKT Field Textarea
+# LKT Field Editor
 
 ![ts](https://img.shields.io/badge/Typescript-3178c6?style=for-the-badge)
 ![js](https://img.shields.io/badge/Javascript-f68333?style=for-the-badge)
