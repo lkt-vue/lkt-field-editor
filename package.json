@@ -1,6 +1,6 @@
 {
   "name": "lkt-field-editor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "keywords": [
     "lkt",
@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "lkt-events": "^1.0.2",
+    "lkt-field-validation": "^1.0.0",
     "lkt-string-tools": "^1.0.3",
     "process": "^0.11.10",
     "sass": "^1.57.1",

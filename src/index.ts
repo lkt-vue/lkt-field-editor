@@ -1,14 +1,16 @@
 import { App } from 'vue';
 
+import LktFieldValidation from 'lkt-field-validation';
+
 import { default as editor } from './lib-components/LktFieldEditor.vue';
 
-import "../style.css";
 import {Settings} from "./settings/Settings";
 
 const LktFieldTextArea = {
   install: (app: App) => {
     // Register plugin components
     if (app.component('lkt-field-editor') === undefined) app.component('lkt-field-editor', editor);
+    if (app.component('lkt-field-validations') === undefined) app.use(LktFieldValidation);
   },
 };
 
